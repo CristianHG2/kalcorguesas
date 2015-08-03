@@ -44,8 +44,6 @@ $(document).ready(function()
 			case 1:
 				// Tasks
 
-				if ( $(this).data('clicked') !== true )
-				{
 					if ( $(this).hasResource() == true )
 					{
 						$(this).startTask(function(task)
@@ -56,12 +54,9 @@ $(document).ready(function()
 
 							$(this).data('clicked', true);
 						}, $(this).data('wrap'));
-
-						$(this).data('clicked', true);
 					}
 					else
 						objectInfo('noresource', 'No tienes los materiales necesarios');
-				}
 			break;
 			case 2:
 				if ( $(this).data('clicked') !== true )

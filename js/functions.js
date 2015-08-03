@@ -46,8 +46,12 @@ function doTask(after, wrap2, font_size, obj, task)
 
 	progressNum[task] = new Array();
 
-	progressNum[task]['total'] = (Date.now() + tasks[task][4]) - Date.now();
+	progressNum[task]['total'] = (Date.now() + (tasks[task][4] * taskDelay[task])) - Date.now();
 	progressNum[task]['start'] = Date.now();
+
+	stats['kolcarham']  -= tasks[task][0];
+	stats['kolcargues'] -= tasks[task][1];
+	stats['sampham']	-= tasks[task][2];
 
 	var curr_task = task;
 
@@ -72,12 +76,14 @@ function doTask(after, wrap2, font_size, obj, task)
 				});
 		});
 
-		obj_progress.animate({ backgroundColor : '#A9D0F5'});
+		obj_progress.animate({ backgroundColor : '#FFF'});
 
 		clearTimeout(progressTimer[task]);
 
+		taskDelay[task] += 1;
+
 		after(curr_task);
-	}, tasks[task][4]);
+	}, tasks[task][4] * taskDelay[task]);
 }
 
 function hasResources(kolcarham, kolcargues, sampham, dolargues)
@@ -105,7 +111,7 @@ function updateTimes()
 		if ( $(this).data('type') == 0 )
 		{
 			var id  = $(this).attr('id');
-			var string = (objects[id][1] + amountb) + "/" + ((objects[id][0] / 1000) - timeb) + " sec";
+			var string = (objects[id][1] + amountb) + "/" + ((objects[id][0] - timeb)  / 1000) + " sec";
 			$(this).children('.content').children('span').text(string);
 		}
 	});
@@ -141,7 +147,7 @@ function objectInfo(index, type, rewardText)
 					<span style="font-weight: bold; color: brown;">' + tasks[index][0] + ' KHG</span>, \
 					<span style="font-weight: bold; color: black;">' + tasks[index][1] + ' KGS</span>, \
 					<span style="font-weight: bold; color: orange;">' + tasks[index][2] + ' SHG</span> & \
-					<b>' + tasks[index][4] / 1000 + ' segundos');
+					<b>' + (tasks[index][4] * taskDelay[index]) / 1000 + ' segundos');
 		}
 		else
 		{
@@ -161,6 +167,9 @@ function makeBurger(after, burgerid, obj)
 	progressNumB[burgerid] = new Array();
 
 	var timeMake = objects[burgerid][0] - timeb;
+
+	console.log(timeMake);
+	console.log(timeb);
 
 	progressNumB[burgerid]['total'] = (Date.now() + timeMake) - Date.now();
 	progressNumB[burgerid]['start'] = Date.now();

@@ -87,6 +87,12 @@ var timeb = 0;
 var sellb = 1;
 var amountb = 0;
 
+var taskDelay = new Array();
+
+taskDelay['codesamp'] = 1;
+taskDelay['rapespookie'] = 1;
+taskDelay['dopaja'] = 1;
+
 // Job and boost indicator
 
 var completed = new Array();
