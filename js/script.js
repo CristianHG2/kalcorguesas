@@ -87,11 +87,18 @@ $(document).ready(function()
 						var final_text = split[0] + 's';
 					else
 						var final_text = split[0];
-
-					if ( objects[$(this).attr('id')][0] >= 2000 )
-						var sec_text = ((objects[$(this).attr('id')][0] / 1000) - timeb) + ' segundos';
+						
+					var seconds = (objects[$(this).attr('id')][0] - timeb) / 1000;
+					
+					if ( seconds < 1 )
+						seconds = 1;
 					else
-						var sec_text = ((objects[$(this).attr('id')][0] / 1000) - timeb) + ' segundo';
+						seconds = seconds;
+
+					if ( seconds >= 2 )
+						var sec_text = seconds + ' segundos';
+					else
+						var sec_text = seconds + ' segundo';
 
 					$(this).putObjectInfo('Valor:  <span style="font-weight: bold; color: green;">&sect;' + objects[$(this).attr('id')][2] + '</span> | Recompensa: <span id="' + $(this).attr('id') + 'text">' + (objects[$(this).attr('id')][1] + amountb) + ' ' + final_text + '</span> | Costo: <b>' + sec_text + '</b>');
 				break;
