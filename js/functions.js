@@ -204,7 +204,7 @@ function makeBurger(after, burgerid, obj)
 
 		clearTimeout(progressTimerB[burgerid]);
 
-	}, objects[burgerid][0]);
+	}, timeMake);
 }
 
 function updateEconomy()
