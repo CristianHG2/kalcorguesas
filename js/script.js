@@ -100,7 +100,7 @@ $(document).ready(function()
 					else
 						var sec_text = seconds + ' segundo';
 
-					$(this).putObjectInfo('Valor:  <span style="font-weight: bold; color: green;">&sect;' + objects[$(this).attr('id')][2] + '</span> | Recompensa: <span id="' + $(this).attr('id') + 'text">' + (objects[$(this).attr('id')][1] + amountb) + ' ' + final_text + '</span> | Costo: <b>' + sec_text + '</b>');
+					$(this).putObjectInfo('Valor:  <span style="font-weight: bold; color: green;">&sect;' + objects[$(this).attr('id')][2] * sellb + '</span> | Recompensa: <span id="' + $(this).attr('id') + 'text">' + (objects[$(this).attr('id')][1] + amountb) + ' ' + final_text + '</span> | Costo: <b>' + sec_text + '</b>');
 				break;
 				case 1:
 					$(this).putObjectInfo();
