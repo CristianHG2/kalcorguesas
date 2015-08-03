@@ -113,7 +113,7 @@ function updateTimes()
 			var id  = $(this).attr('id');
 			var time = (objects[id][0] - timeb);
 			
-			if ( if ( time ) < 1 )
+			if ( time < 1 )
 				time = 1;
 			else
 				time = time;
