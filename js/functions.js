@@ -111,7 +111,14 @@ function updateTimes()
 		if ( $(this).data('type') == 0 )
 		{
 			var id  = $(this).attr('id');
-			var string = (objects[id][1] + amountb) + "/" + ((objects[id][0] - timeb)  / 1000) + " sec";
+			var time = (objects[id][0] - timeb);
+			
+			if ( if ( time ) < 1 )
+				time = 1;
+			else
+				time = time;
+			
+			var string = (objects[id][1] + amountb) + "/" + (time / 1000) + " sec";
 			$(this).children('.content').children('span').text(string);
 		}
 	});
@@ -168,8 +175,10 @@ function makeBurger(after, burgerid, obj)
 
 	var timeMake = objects[burgerid][0] - timeb;
 
-	console.log(timeMake);
-	console.log(timeb);
+	if ( timeMake < 1 )
+		timeMake = 1;
+	else
+		timeMake = timeMake;
 
 	progressNumB[burgerid]['total'] = (Date.now() + timeMake) - Date.now();
 	progressNumB[burgerid]['start'] = Date.now();
