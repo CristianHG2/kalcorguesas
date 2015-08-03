@@ -76,7 +76,7 @@ function doTask(after, wrap2, font_size, obj, task)
 				});
 		});
 
-		obj_progress.animate({ backgroundColor : '#FFF'});
+		obj_progress.css({ width : '0%' });
 
 		clearTimeout(progressTimer[task]);
 
