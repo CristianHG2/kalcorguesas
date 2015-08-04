@@ -64,7 +64,7 @@ var text = new Array();
 
 var timer_type;
 
-var timer_started;
+var timer_started = 0;
 
 var stats = new Array();
 
