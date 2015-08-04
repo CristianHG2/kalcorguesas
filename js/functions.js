@@ -141,20 +141,20 @@ function objectInfo(index, type, rewardText)
 {
 	if ( index == null )
 	{
-		$(".header").children("h1").html("Hamburguesas Kalcor");
-		$(".header").children("p").html("Desarrollado por CristianHG");
+		$(".header").children("h1").html(desc['gamename']);
+		$(".header").children("p").html(desc['slogan']);
 	}
 	else
 	{
 		if ( rewardText == null )
 		{
 				$(".header").children("h1").html(desc[index][0]);
-				$(".header").children("p").html(desc[index][1] + ' &bull; Recompensa: \
-					<span style="font-weight: bold; color: green;">§' + tasks[index][3] + '</span> | Costo: \
+				$(".header").children("p").html(desc[index][1] + ' &bull; ' + desc['reward'] + ': \
+					<span style="font-weight: bold; color: green;">§' + tasks[index][3] + '</span> | ' + desc['cost'] + ': \
 					<span style="font-weight: bold; color: brown;">' + tasks[index][0] + ' KHG</span>, \
 					<span style="font-weight: bold; color: black;">' + tasks[index][1] + ' KGS</span>, \
 					<span style="font-weight: bold; color: orange;">' + tasks[index][2] + ' SHG</span> & \
-					<b>' + (tasks[index][4] * taskDelay[index]) / 1000 + ' segundos');
+					<b>' + (tasks[index][4] * taskDelay[index]) / 1000 + ' ' + desc['sec']);
 		}
 		else
 		{
@@ -313,7 +313,7 @@ function sellBurger(burgerid)
 		stats['dolargues'] += objects[burgerid][2] * sellb;
 	}
 	else
-		objectInfo('noresource', 'No tienes los materiales necesarios');
+		objectInfo('noresource', desc['noresource'][0]);
 }
 
 // jQuery function extension

@@ -58,19 +58,9 @@ tasks['dopaja'] = new Array(15, 15, 18, 13000, 30000);
 
 var desc = new Array();
 
-desc['codesamp'] = new Array('Programar SA:MP', 'Desincronizemonos juntos');
-desc['rapespookie'] = new Array('Violar a Spookie', 'A veces Diana no es suficiente');
-desc['dopaja'] = new Array('Hacerse una paja', 'Oh si Diana justo en la grasa');
-desc['kolcarham'] = new Array('Kolcar Hamburguesa', '¡Incluye una hosted tab!');
-desc['kolcargues'] = new Array('Kolcarguesa', 'Come una de estas y pelea menos con Y_Less');
-desc['sampham'] = new Array('SA:MP Hamburguesa', 'Come-mete un-una de est-a-esta-s!');
-desc['human_resources'] = new Array('Contratar a un gerente', 'Contrata empleados');
-desc['faster_cooking'] = new Array('Contratar a un chef', 'Cocina más rapido');
-desc['do_marketing'] = new Array('Hacer mercadeo', 'Vende más caro');
-desc['sync'] = new Array('Mejorar sincronización', 'lol ni en 10,000 años');
-desc['noresource'] = new Array('<span style="color: red">No tienes los materiales necesarios!</span>', 'Error')
-
 // Variable holders
+
+var text = new Array();
 
 var timer_type;
 
