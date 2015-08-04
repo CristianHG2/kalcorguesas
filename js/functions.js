@@ -240,7 +240,7 @@ function doTypewriter(text, object, delay, options)
 	if ( options['wrap'] == null )
 		options['wrap'] = $("<div class=\"typewriter\"></div>")
 	else
-		options['wrap'] = $("<" + options['wrap'] + " " + options['style'] + "></" + options['wrap'] + ">");
+		options['wrap'] = $("<" + options['wrap'] + " " + options['style'] + " class=\"typewriter\"></" + options['wrap'] + ">");
 
 	if ( options['text'] == null )
 		options['text'] = "Continuar";
@@ -256,31 +256,29 @@ function doTypewriter(text, object, delay, options)
 	else
 		var newline = '<br>';
 
-	if ( timer_type !== null )
-		clearTimeout(timer_type);
-	else
-		console.log('theres a timer set');
-
-	timer_type = setInterval(function()
+	if ( timer_type == null )
 	{
-		if ( index <= textSplit.length - 1 )
+		timer_type = setInterval(function()
 		{
-			if ( textSplit[index] == "%" )
-				object.children(options['wrap']).append(newline);
-			else
-				object.children(options['wrap']).append(textSplit[index]);
-		}
+			if ( index <= textSplit.length - 1 )
+			{
+				if ( textSplit[index] == "%" )
+					object.children(options['wrap']).append(newline);
+				else
+					object.children(options['wrap']).append(textSplit[index]);
+			}
 
-		if ( index >= textSplit.length - 1 )
-		{
-			var button = $("<button class=\"close_overlay\" onclick=\"javascript:closeOverlay()\">" + options['text'] + "</a>");
-			object.append(button);
+			if ( index >= textSplit.length - 1 )
+			{
+				var button = $("<button class=\"close_overlay\" onclick=\"javascript:closeOverlay()\">" + options['text'] + "</a>");
+				object.append(button);
 
-			clearTimeout(timer_type);
-		}
+				clearTimeout(timer_type);
+			}
 
-		index++;
-	}, delay);
+			index++;
+		}, delay);
+	}
 }
 
 function openOverlayAppend(callback)
