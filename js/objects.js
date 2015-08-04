@@ -64,6 +64,8 @@ var text = new Array();
 
 var timer_type;
 
+var timer_started;
+
 var stats = new Array();
 
 stats['kolcarham'] = 0;
