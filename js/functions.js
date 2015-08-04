@@ -64,26 +64,29 @@ function doTask(after, wrap2, font_size, obj, task)
 		obj_progress.css({ width : percent + "%" });
 	}, 1);
 
-	setTimeout(function()
+	if ( timer_started == 0 )
 	{
-		openOverlayAppend(function(box)
-		{ 
-			box.typeWriter(tasks[task]['text'], 10, 
-				{ 
-					wrap : wrap2, 
-					style : 'font-size: ' + font_size, 
-					text : "Go"
-				});
-		});
+		setTimeout(function()
+		{
+			openOverlayAppend(function(box)
+			{ 
+				box.typeWriter(tasks[task]['text'], 10, 
+					{ 
+						wrap : wrap2, 
+						style : 'font-size: ' + font_size, 
+						text : "Go"
+					});
+			});
 
-		obj_progress.css({ width : '0%' });
+			obj_progress.css({ width : '0%' });
 
-		clearTimeout(progressTimer[task]);
+			clearTimeout(progressTimer[task]);
 
-		taskDelay[task] += 1;
+			taskDelay[task] += 1;
 
-		after(curr_task);
-	}, tasks[task][4] * taskDelay[task]);
+			after(curr_task);
+		}, tasks[task][4] * taskDelay[task]);
+	}
 }
 
 function hasResources(kolcarham, kolcargues, sampham, dolargues)
@@ -256,8 +259,10 @@ function doTypewriter(text, object, delay, options)
 	else
 		var newline = '<br>';
 
-	if ( timer_type == null )
+	if ( timer_started == 0 )
 	{
+		timer_started = 1;
+
 		timer_type = setInterval(function()
 		{
 			if ( index <= textSplit.length - 1 )
@@ -273,7 +278,7 @@ function doTypewriter(text, object, delay, options)
 				var button = $("<button class=\"close_overlay\" onclick=\"javascript:closeOverlay()\">" + options['text'] + "</a>");
 				object.append(button);
 
-				clearTimeout(timer_type);
+				timer_started = 0;
 			}
 
 			index++;
