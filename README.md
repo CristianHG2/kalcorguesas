@@ -1,5 +1,5 @@
 # kalcorguesas
-Repository of Kalcor's burgers (Kalcorguesas) (English)
+Repository of Kalcor's burgers (Kalcorguesas) (English) [EXPLICIT!]
 
 ## Creating new objects
 
