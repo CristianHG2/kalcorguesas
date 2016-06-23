@@ -19,8 +19,8 @@ $lang['es'] = array(
 	"sync_better"	=> "Mejorar sincronización",
 
 	"codesamp"		=> "Programar SA:MP",
-	"rapespookie"	=> "Violar a Spookie",
-	"dopaja"		=> "Hacerse una paja",
+	"rapespookie"	=> "TESTINGTESTING",
+	"dopaja"		=> "TESTINGTESTING",
 
 	"sell"			=> "Vender hamburguesas",
 	"no_resources"	=> "No tienes los recursos necesarios",
@@ -41,19 +41,8 @@ $lang['es'] = array(
 						    rakServer->Startup(MAX_CONNS, 30, &SocketDescriptor(SERVER_PORT,0), 1);%%
 						    return 0;%
 						}",
-	"spookie_text"	=> "Kalcor: Spookie, quiero meterte una hamburguesa por el culo%%
-						Spookie: ...%%
-						Spookie: Vete a la mierda Kalcor%%
-						Kalcor agarra a Spookie y lo pone contra la pared.%% 
-						Spookie: VETE A LA MIERDA KALCOR NO JODA%%
-						Kalcor: Es muy tarde%%
-						Agarra su hamburguesa Diana y empieza a metérsela por el culo%%
-						Spookie ha ganado +1 (una) hamburguesa anal%%",
-	"dopaja_text"	=> "Kalcor está mirando el menú de Burger King%%
-						Kalcor: Oh dios mio, mira la textura de la carne de la Stacker 5.0... mmmm..%%
-						Kalcor baja su cierre y empieza a masturbarse%%
-						Kalcor: ¡OH SÍ JODER! ¡MIRA COMO ESTÁ LA LECHUGA Y SUS CONDIMENTOS!%%
-						Kalcor acaba en el menú y en la cara de la cajera.",
+	"spookie_text"	=> "TESTING%%TESTING",
+	"dopaja_text"	=> "TESTING%%TESTING",
 
 	"codesampdesc"	=> "Desincronizemonos juntos",
 	"spookiedesc"	=> "A veces Diana no es suficiente",
@@ -90,8 +79,8 @@ $lang['en'] = array(
 	"sync_better"	=> "Improve synchronization",
 
 	"codesamp"		=> "Develop SA:MP",
-	"rapespookie"	=> "Rape Spookie",
-	"dopaja"		=> "Jack off",
+	"rapespookie"	=> "TESTINGTESTING",
+	"dopaja"		=> "TESTINGTESTING",
 
 	"sell"			=> "Sell burgers",
 	"no_resources"	=> "You don't have the necessary resources",
@@ -112,19 +101,8 @@ $lang['en'] = array(
 						    rakServer->Startup(MAX_CONNS, 30, &SocketDescriptor(SERVER_PORT,0), 1);%%
 						    return 0;%
 						}",
-	"spookie_text"	=> "Kalcor: Spookie, I DESIRE to put a burger up your ass%%
-						Spookie: ...%%
-						Spookie: Fuck off Kalcor%%
-						Kalcor grabs Spookie y pushes him against the wall.%% 
-						Spookie: WHAT THE FUCK ARE YOU DOING GET OFF OF ME%%
-						Kalcor: It's too late%%
-						Kalcor takes his burger Diana and forces it up Spookie's ass%%
-						Spookie has acquired +1 (one) anal burger%%",
-	"dopaja_text"	=> "Kalcor looks at Burger King's menu%%
-						Kalcor: Oh good lord, look at the meat of the Stacker 5.0... mmmm..%%
-						Kalcor pulls down his zipper and begins to furiously masturbate%%
-						Kalcor: OH FUCK YES, LOOK AT ALL THE SAUCES AND SPICES%%
-						Kalcor busts on the cashier's face",
+	"spookie_text"	=> "TESTING%%TESTING",
+	"dopaja_text"	=> "TESTING%%TESTING",
 
 	"codesampdesc"	=> "Let's unsynchronize together",
 	"spookiedesc"	=> "Sometimes Diana is not enough",
